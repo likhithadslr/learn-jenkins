@@ -1,5 +1,12 @@
 pipeline {
-    agent any 
+        agent {
+            label 'AGENT-1'
+        }
+        // options{
+        //     timeout(time: 10, unit: 'MINUTES')
+        //     disableConcurrentBuilds()
+        //     //retry(1)
+        // }
         stages {
             stage('Build') {
                 steps {
@@ -31,14 +38,6 @@ pipeline {
         }
 }
 // pipeline {
-//     agent {
-//         label 'AGENT-1'
-//     }
-//     options{
-//         timeout(time: 10, unit: 'MINUTES')
-//         disableConcurrentBuilds()
-//         //retry(1)
-//     }
 //     environment {
 //         DEBUG = 'true'
 //     }
